@@ -1,0 +1,54 @@
+@import '../../Scss/Variables';
+
+.FPComponent {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$tablet-down} {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3 {
+    display: flex;
+    margin: 0;
+    transition: $transition-fast;
+    cursor: pointer;
+
+    &:hover {
+      color: $special-primary;
+    }
+
+    .FPArrow {
+      transition: $transition-fast;
+
+      &.rotate {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  p {
+    letter-spacing: 0.1px;
+
+    a {
+      color: $special-primary;
+      transition: $transition-fast;
+
+      &:hover {
+        color: $special-secondary;
+      }
+    }
+  }
+
+  .FPWrapper {
+    transition: $transition-slow;
+    height: fit-content;
+    opacity: 1;
+
+    &.folded {
+      display: none;
+    }
+  }
+}

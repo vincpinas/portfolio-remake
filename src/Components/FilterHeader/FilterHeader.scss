@@ -1,0 +1,105 @@
+@import '../../Scss/Variables';
+@import '../../Scss/Mixins';
+
+$base-width: 9rem;
+
+.filterHeaderComponent {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 2rem;
+
+  .filterWrapper {
+    background-color: var(--background-alternate);
+    border-radius: $border-radius--primary;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    padding: 0.5rem;
+    z-index: 3;
+
+    .filterButton {
+      @include font--primary(600);
+      @include input;
+      padding: 1rem 0rem;
+      width: $base-width;
+      margin: 0;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      z-index: 5;
+      outline: none;
+
+      @media #{$tablet-down} {
+        width: calc($base-width / 1.5);
+      }
+    }
+
+    .tabIndicator {
+      @include font--primary(600);
+      transition: transform $transition-normal;
+      position: absolute;
+      padding: 1rem 3rem;
+      background: var(--background-secondary);
+      z-index: 4;
+      border-radius: inherit;
+    }
+  }
+
+  .subFilterWrapper {
+    background-color: var(--background-alternate);
+    border-radius: $border-radius--primary;
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    position: absolute;
+    padding: 0.5rem;
+    z-index: 0;
+    transition: $transition-slow ease-in-out;
+    transition-property: transform, opacity ;
+    transform: translateY(0px);
+    opacity: 0;
+
+    &.active {
+      transform: translateY(150%);
+      opacity: 1;
+    }
+
+    &.inactive {
+      display: none
+    }
+
+    .filterButton {
+      @include font--primary(600);
+      @include input;
+      padding: 0.25rem 0rem;
+      width: $base-width;
+      margin: 0;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      z-index: 2;
+      outline: none;
+
+      @media #{$tablet-down} {
+        width: calc($base-width / 1.5);
+      }
+    }
+
+    .tabIndicator {
+      @include font--primary(600);
+      transition: transform $transition-normal;
+      position: absolute;
+      padding: 1rem 3rem;
+      background: var(--background-secondary);
+      z-index: 1;
+      border-radius: inherit;
+    }
+  }
+}

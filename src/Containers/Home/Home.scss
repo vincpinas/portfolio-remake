@@ -1,0 +1,75 @@
+@import '../../Scss/Mixins';
+@import '../../Scss/Variables';
+@import '../../Scss/Animations';
+
+#homeContainer {
+  width: 100%;
+  height: 100%;
+
+  .heroWrapper {
+    background: var(--background)-secondary;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: $index-low;
+
+    .heroText {
+
+      p {
+        color: var(--text-secondary);
+        letter-spacing: 1px;
+      }
+
+      a {
+        @include button;
+        @include paragraph;
+        font-weight: 700;
+        padding: 10px 100px;
+
+        @media #{$mobile-down} {
+          display: none;
+        }
+      }
+    }
+
+    @media #{$normal} {
+      @for $i from 1 through 4 {
+        div:nth-child(#{$i}) {
+          @include drop-in-ani($i * 0.2s);
+        }
+      }
+    }
+  }
+}
+
+.bigLetters {
+  text-shadow: -1px 0 0px $special-primary, 0 1px 0px darken($color: $special-secondary, $amount: 15%), -2px 1px 0px $special-primary, -1px 2px 0px darken($color: $special-secondary, $amount: 15%), -3px 2px 0px $special-primary, -2px 3px 0px darken($color: $special-secondary, $amount: 15%), -4px 3px 0px $special-primary, -3px 4px 0px darken($color: $special-secondary, $amount: 15%), -5px 4px 0px $special-primary, -4px 5px 0px darken($color: $special-secondary, $amount: 15%), -6px 5px 0px $special-primary, -5px 6px 15px $special-extra;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $special-extra;
+
+  #bigLetter {
+    transform: rotateX(20deg) rotateY(30deg) rotateZ(-20deg);
+    transition: all 0.8s;
+    animation: big-letter-animation-1 3.3s infinite;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  #bigLetter2 {
+    transition: all 0.8s;
+    margin-top: 40px;
+    margin-left: -5rem;
+    transform: rotateX(-20deg) rotateY(-23deg) rotateZ(20deg);
+    animation: big-letter-animation-2 3.3s infinite;
+    font-size: inherit;
+    color: inherit;
+  }
+}

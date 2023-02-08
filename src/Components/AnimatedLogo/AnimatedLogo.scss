@@ -1,0 +1,21 @@
+@import '../../Scss/Variables';
+
+#VPLogo {
+  @keyframes logo-animation {
+    from {
+      transform: translateY(0px)
+    }
+
+    to {
+      transform: translateY(-15px)
+    }
+  }
+
+  #V {
+    animation: logo-animation 2.5s ease-in-out 0.3s infinite alternate-reverse;
+  }
+
+  #P {
+    animation: logo-animation 2.5s ease 0s infinite alternate;
+  }
+}

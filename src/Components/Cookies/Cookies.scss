@@ -1,0 +1,45 @@
+@import '../../Scss/Variables';
+@import '../../Scss/Mixins';
+
+.cookiesNotice {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  padding: 20px;
+  max-width: 350px;
+  background-color: $background;
+  color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius--primary;
+  box-shadow: $box-shadow--primary;
+  z-index: $index-5;
+
+  @include slide-in-ani(1.2s, "left");
+
+  &.accepted {
+    @include slide-out-ani;
+  }
+
+  span {
+    @include paragraph;
+
+    a {
+      color: $special-secondary;
+      text-decoration: underline
+    }
+  }
+
+  button {
+    @include button;
+    background-color: $background;
+    border: 2px solid var(--color-black);
+    color: var(--color-black);
+    padding: 10px;
+
+    &:hover {
+      background-color: var(--color-black);
+      color: $background;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import '../../Scss/Variables';
+@import '../../Scss/Mixins';
+
+#aboutContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .containerAbout {
+    padding: 0 12rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3rem;
+
+    @media #{$tablet-down} {
+      padding: 0 1rem;
+    }
+
+    .screen {
+      background: rgba(var(--background-alternate-rgb), 0.05);
+      margin: auto;
+      display: flex;
+      height: fit-content;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-bottom: 10px;
+      align-items: center;
+      overflow: auto;
+      border-radius: 0px 0px $border-radius--primary $border-radius--primary;
+      box-shadow: $box-shadow--primary;
+
+      @media #{$tablet-down} {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        #selfie {
+          display: none;
+        }
+      }
+    }
+
+  }
+
+  /* Top part of content section with 3 circular buttons. */
+  .topbar {
+    width: 100%;
+    background-color: var(--background-alternate);
+    box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, 0.25);
+    height: 3%;
+    margin: auto;
+    overflow: hidden;
+    padding: 4px 2px;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .circles {
+    width: 100%;
+    height: 100%;
+    margin-left: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+
+    @for $i from 1 through 3 {
+      .circle#{$i}:nth-child(#{$i}) {
+        @include drop-in-animation(0.5 + $i * 0.1s);
+      }
+    }
+  }
+
+  .circle1,
+  .circle2,
+  .circle3 {
+    margin-right: 5px;
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 0.7rem;
+    background-color: var(--background);
+    border: solid 1px var(--border-light);
+    transition: all 0.4s ease 0s;
+  }
+
+  .circle1:hover {
+    background-color: $special-extra;
+    border: solid 1px darken($color: $special-extra, $amount: 15%);
+  }
+
+  .circle2:hover {
+    background-color: $special-primary;
+    border: solid 1px darken($color: $special-extra, $amount: 15%);
+  }
+
+  .circle3:hover {
+    background-color: $special-secondary;
+    border: solid 1px darken($color: $special-extra, $amount: 15%);
+  }
+
+  .screen,
+  .topbar {
+    width: 100%;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-bottom: auto;
+
+    p {
+      margin: 0 1rem 1rem 1rem;
+
+      @media #{$tablet-down} {
+        margin: 0 1rem 1rem 1rem;
+      }
+    }
+
+    @for $i from 1 through 10 {
+      *:nth-child(#{$i}) {
+        @include drop-in-animation($i * 0.1s);
+      }
+    }
+  }
+
+  #selfie {
+    @include drop-in-animation(0.3s);
+    padding: 20px;
+    width: 300px;
+  }
+}

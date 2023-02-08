@@ -1,0 +1,22 @@
+@import '../../Scss/Variables';
+
+.RWComponentContainer {
+  display: inline-block;
+
+  .RWWrapper {
+    overflow: hidden;
+    height: #{$font-size--h1 + 10.2}px;
+    display: flex;
+    flex-direction: column;
+
+    .RWItem {
+      color: var(--text-primary);
+      display: block;
+      transition: $transition-fast;
+
+      @media #{$tablet-down} {
+        animation: none !important;
+      }
+    }
+  }
+}

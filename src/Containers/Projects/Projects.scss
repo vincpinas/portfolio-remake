@@ -1,0 +1,22 @@
+@import '../../Scss/Variables';
+
+#projectsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  
+  .tabWrapper {
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 3rem;
+
+    @media #{$tablet-down} {
+      padding: 0 1rem;
+    }
+  }
+}
