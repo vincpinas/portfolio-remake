@@ -41,7 +41,7 @@ function ProjectPopup({ project, close }: PopProps) {
           </ul>
         </div>
         <div className='title'>
-          <a href={project.links.live} target='_blank'>
+          <a href={project.links.live} target='_blank' rel="noreferrer">
             <h2>{project.title}</h2>
           </a>
           <p>{project.introduction}</p>
