@@ -47,7 +47,7 @@ function ProjectPopup({ project, close }: PopProps) {
           <p>{project.introduction}</p>
         </div>
       </div>
-      <div className='blur' ref={blur}></div>
+      <div className='blur' ref={blur} onClick={closeAnim} />
     </section>
   )
 }
