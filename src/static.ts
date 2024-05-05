@@ -42,7 +42,7 @@ export const themes = {
 }
 
 export const API_URL = () => {
-  if(window.location.href.includes('ma-cloud')) {
+  if (window.location.href.includes('ma-cloud')) {
     return 'https://30472.hosts1.ma-cloud.nl/php-dash'
   } else {
     return 'http://127.0.0.1'
@@ -51,7 +51,7 @@ export const API_URL = () => {
 
 export const hexToRgb = (hex: any) => {
   return hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-             ,(m: any, r: any, g: any, b: any) => '#' + r + r + g + g + b + b)
+    , (m: any, r: any, g: any, b: any) => '#' + r + r + g + g + b + b)
     .substring(1).match(/.{2}/g)
     .map((x: any) => parseInt(x, 16))
 }

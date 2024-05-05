@@ -10,23 +10,90 @@
     z-index: $index-4;
     top: 0;
     left: 0;
-    background: rgba($color: #000000, $alpha: 0.5);
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+
+    .blur {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+      animation: f-in-w $transition-fast ease-in-out 1 forwards;
+    }
 
     .window {
       padding: 2rem;
       background-color: var(--background-alternate);
-      border-radius: $border-radius--primary;
+      // border-radius: $border-radius--primary;
+      z-index: $index-2;
+      min-height: 100%;
+      overflow-y: scroll;
+      width: 70%;
       display: flex;
       flex-direction: column;
 
-      #close {
-        margin-left: auto;
-        color: var(--text-primary);
+      animation: s-out-w $transition-fast ease-in-out 1 forwards;
 
+      #close {
+        font-size: 1.35em;
+        margin-bottom: 1rem;
       }
+
+      #close path {
+        stroke: var(--text-primary);
+        transition: $transition-fast;
+        stroke-width: 3;
+      }
+
+      #close:hover path {
+        stroke: var(--special-primary)
+      }
+    }
+
+    .title {
+      a {
+        color: var(--special-primary);
+        transition: $transition-fast;
+      }
+
+      a:hover {
+        color: var(--special-secondary);
+      }
+
+      h2, p {
+        margin: 0;
+      }
+    }
+
+    .popupImages {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      & > img {
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+      }
+
+      ul li, ul li img {
+        width: 5rem;
+      }
+      
     }
   }
 
@@ -36,15 +103,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 1rem;
-    
+
     @media #{$mobile-down} {
       grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
     }
-    
+
     h4 {
       text-align: center;
     }
-    
+
     .projectCard {
       background: rgba($color-white, 0.05);
       border-radius: $border-radius--primary;
@@ -60,11 +127,9 @@
       }
 
       &::before {
-        background: radial-gradient(
-          800px circle at var(--mouse-x) var(--mouse-y),
-          rgba($color-white, 0.06),
-          transparent 40%
-        );
+        background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+            rgba($color-white, 0.06),
+            transparent 40%);
         border-radius: inherit;
         content: "";
         height: 100%;
@@ -107,7 +172,7 @@
       span {
         display: inline-flex;
         align-items: center;
-        
+
         figure {
           @include input;
           @include font--primary(400);

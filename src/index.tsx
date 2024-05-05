@@ -10,7 +10,7 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(container).render(
   <React.StrictMode>
-    <BrowserRouter basename='/portfolio-remake'>
+    <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>

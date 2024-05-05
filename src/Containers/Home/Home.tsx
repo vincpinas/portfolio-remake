@@ -13,7 +13,7 @@ function Home() {
     });
   }, []);
 
-  const wordsList = [['Web', 'Developer.'], ['Software', 'Student.'], ['Life', 'Enjoyer.'],]
+  const wordsList = [['Web', 'Developer.'], ['Design', 'Student.'], ['Life', 'Enjoyer.'],]
 
   return (
     <div id='homeContainer'>

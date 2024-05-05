@@ -10,7 +10,7 @@ function Projects() {
   const [tabState, setTabState] = useState<any>(null);
   const filters = ['Projects', 'Skills', 'Education']
   const subFilters = [
-    { parent: 'Projects', headers: ['All', 'Work', 'Side'] },
+    { parent: 'Projects', headers: ['All', 'Development', 'Design'] },
   ]
 
   function tab() {

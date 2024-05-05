@@ -38,7 +38,8 @@ function About() {
               title='What can I do for you?'
               children={
                 <p>
-                  Since I am aiming to become a front-end developer or a fullstuck developer I currently mainly work with <a href='https://reactjs.org/' target="_blank" rel="noreferrer">React.js</a>, <a href='https://nodejs.org/' target="_blank" rel="noreferrer">Node.js</a> and <a href='https://www.php.net/' target="_blank" rel="noreferrer">PHP</a>.
+                  Since I am aiming to become a a fullstuck developer and Designer I'm currently polishing multiple skills at the same time.
+                  For development I mainly work with a combination of <a href='https://reactjs.org/' target="_blank" rel="noreferrer">React.js</a>, <a href='https://nodejs.org/' target="_blank" rel="noreferrer">Node.js</a> and <a href='https://www.php.net/' target="_blank" rel="noreferrer">PHP</a> or with Craft CMS.
                   <br></br>
                   One example of what I made in react would be this entire portfolio.
                   <br></br>
@@ -60,9 +61,7 @@ function About() {
               title='Future goals 🔮'
               children={
                 <p>
-                  I am currently aiming to perfect my knowledge of React and to start working more on backend solutions using Node.
-                  <br></br>
-                  While I'm making projects to work on those skills I will also be working on my planning skills.
+                  I am currently aiming to get my design skills up to a good enough point, so that I can combine it with my development skills to setup my own company.
                 </p>
               }
             />

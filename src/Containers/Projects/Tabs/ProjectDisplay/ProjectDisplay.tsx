@@ -19,8 +19,8 @@ function ProjectDisplay({ projects, filter }: PPRops) {
     const { currentTarget: t } = e;
 
     const rect = t.getBoundingClientRect(),
-    x = e.clientX - rect.left,
-    y = e.clientY - rect.top;
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
 
     t.style.setProperty('--mouse-x', `${x}px`);
     t.style.setProperty('--mouse-y', `${y}px`);
@@ -31,12 +31,14 @@ function ProjectDisplay({ projects, filter }: PPRops) {
   }
   const closePopup = () => setPopupActive(false);
   useEffect(() => {
-    if (projects.filter(project => project.categories.includes(filter.toLowerCase())).length > 0) {
-      setFilteredProjects(
-        projects.filter(project => project.categories.includes(filter.toLowerCase()))
-      )
-    } else {
+    const filterProjects = projects.filter(project => project.categories.includes(filter.toLowerCase()));
+
+    if (filter.toLowerCase() === "all") {
       setFilteredProjects(projects)
+    } else if (filterProjects.length > 0) {
+      setFilteredProjects(filterProjects)
+    } else {
+      setFilteredProjects([])
     }
   }, [projects, filter])
 
@@ -46,14 +48,14 @@ function ProjectDisplay({ projects, filter }: PPRops) {
       <ul id='projectList'>
         {filteredProjects.length > 0 ? filteredProjects.map((project: ParsedProject, index: number) => {
           return (
-            <li key={`project-card-id:${index}`} 
-                className='projectCard' 
-                onClick={() => showPopup(project.id)} 
-                onMouseMove={(e) => mouseMove(e)}
+            <li key={`project-card-id:${index}`}
+              className='projectCard'
+              onClick={() => showPopup(project.id)}
+              onMouseMove={(e) => mouseMove(e)}
             >
               <div className='cardContent'>
                 <div className='imgWrapper'>
-                  <img src={project.img_src !== '' ? project.img_src : placeholder} alt="project cover" />
+                  <img src={project.images && project.images[0] !== '' ? project.images[0] : placeholder} alt="project cover" />
                 </div>
                 <span>
                   <h3>{project.title}</h3>

@@ -3,7 +3,7 @@ export interface ParsedProject {
   title: string;
   introduction: string;
   status: number;
-  img_src?: string;
+  images?: string[];
   description: string;
   learned: string;
   links: { github: string; live: string; };
