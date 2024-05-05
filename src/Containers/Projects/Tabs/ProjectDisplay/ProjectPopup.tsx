@@ -34,10 +34,10 @@ function ProjectPopup({ project, close }: PopProps) {
         <div className='popupImages'>
           <img src={placeholder} alt="Project thumbnail" />
           <ul>
-            <li><img src={placeholder} alt="project image" /></li>
-            <li><img src={placeholder} alt="project image" /></li>
-            <li><img src={placeholder} alt=" project image" /></li>
-            <li><img src={placeholder} alt=" project image" /></li>
+            <li><img src={placeholder} alt="project" /></li>
+            <li><img src={placeholder} alt="project" /></li>
+            <li><img src={placeholder} alt=" project" /></li>
+            <li><img src={placeholder} alt=" project" /></li>
           </ul>
         </div>
         <div className='title'>

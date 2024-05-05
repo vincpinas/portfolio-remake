@@ -1,7 +1,6 @@
 {
   "name": "portfolio-remake",
   "version": "3.2.4",
-  "homepage": "/portfolio-remake/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
