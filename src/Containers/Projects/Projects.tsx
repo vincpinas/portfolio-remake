@@ -15,9 +15,9 @@ function Projects() {
 
   function tab() {
     if (tabState) {
-      if (tabState?.main === filters[0]) return <ProjectDisplay projects={projectsData} filter={tabState.sub} />
-      else if (tabState?.main === filters[1]) return <Skills />
-      else if (tabState?.main === filters[2]) return <Education />
+      if (tabState.main === filters[0]) return <ProjectDisplay projects={projectsData} filter={tabState.sub} />
+      else if (tabState.main === filters[1]) return <Skills />
+      else if (tabState.main === filters[2]) return <Education />
     }
     return null;
   }

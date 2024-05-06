@@ -8,10 +8,11 @@ interface TProps {
 }
 
 function Tooltip({ children, text, className }: TProps) {
+
   return (
-    <div className={`toolTipWrapper ${className}`}>
+    <div className={`toolTipWrapper ${className ? className : ""}`}>
       { children }
-      <span className={`tooltip ${className}`}>{ text }</span>
+      <span className={`tooltip ${className ? className : ""}`}>{ text }</span>
     </div>
   )
 }

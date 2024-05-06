@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function MiniPortfolio() {
   const ref = useRef<HTMLSpanElement>(null);
   const avatar = () => {
-    let temp;
+    let temp: string = "";
     const d = new Date().getDay();
     avatars.forEach((avatar, index) => {
       if(d === index) temp = avatar;

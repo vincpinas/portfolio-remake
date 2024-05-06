@@ -1,5 +1,26 @@
 @import '../../../../Scss/Mixins';
 
+.tag {
+  @include input;
+  @include font--primary(500);
+  font-style: italic;
+  letter-spacing: 0.25px;
+  padding: 0.4rem 1.3rem;
+  margin-bottom: 0;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: .35s;
+  border: none;
+  background: var(--background-secondary);
+  box-shadow: 0 3px var(--background-alternate);
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
 #projectTabContainer {
   width: 100%;
 
@@ -12,7 +33,15 @@
     left: 0;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+
+    &>* {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
 
     .blur {
       position: fixed;
@@ -29,12 +58,13 @@
 
     .window {
       padding: 2rem;
-      background-color: var(--background-alternate);
+      background-color: var(--background);
       // border-radius: $border-radius--primary;
+      position: relative;
       z-index: $index-2;
-      min-height: 100%;
+      min-height: 100vh;
       overflow-y: scroll;
-      width: 70%;
+      max-width: 56rem;
       display: flex;
       flex-direction: column;
 
@@ -56,6 +86,26 @@
       }
     }
 
+    .introduction {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      @media #{$mobile-down} {
+        flex-direction: column;
+      }
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin-bottom: 0.25rem;
+    }
+
+    h4 {
+      font-weight: 600;
+    }
+
     .title {
       a {
         color: var(--special-primary);
@@ -66,9 +116,30 @@
         color: var(--special-secondary);
       }
 
-      h2,
       p {
+        font-style: italic;
+        margin-bottom: 0;
+      }
+
+      hr {
+        margin-bottom: 1rem;
+      }
+
+      .tagList {
+        margin-bottom: 0.7rem;
+      }
+
+      .tagList a {
         margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+      }
+
+      .tagList a.disabled {
+        color: var(--text-primary);
+        opacity: 0.6;
+        pointer-events: none;
       }
     }
 
@@ -80,8 +151,7 @@
       margin-bottom: 1rem;
 
       &>img {
-        width: 100%;
-        height: 15rem;
+        width: 21.5rem;
         margin-bottom: 0.5rem;
       }
 
@@ -171,7 +241,7 @@
         }
       }
 
-      .cardContent > span {
+      .cardContent>span {
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
@@ -197,28 +267,6 @@
           .in-progress {
             color: $color-orange;
           }
-        }
-      }
-
-      .tagList {
-        display: flex;
-        flex-wrap: wrap;
-
-        .tag {
-          @include input;
-          @include font--primary(500);
-          font-style: italic;
-          letter-spacing: 0.25px;
-          padding: 0.4rem 1.3rem;
-          margin: 0.25rem;
-          margin-bottom: 0.5rem;
-          font-weight: 600;
-          border-radius: 4px;
-          transition: .35s;
-          cursor: pointer;
-          border: none;
-          background: var(--background-secondary);
-          box-shadow: 0 3px var(--background-alternate);
         }
       }
     }
