@@ -19,6 +19,7 @@ export const themes = {
     { property: '--color-black', value: '#000000' },
     { property: '--color-red', value: '#ff3e3e' },
     { property: '--label-highlight', value: '#262626' },
+    { property: '--card-blur', value: '0, 0, 0' },
   ],
   dark: [
     { property: '--background', value: '#161616' },
@@ -38,6 +39,7 @@ export const themes = {
     { property: '--color-black', value: '#000000' },
     { property: '--color-red', value: '#ff3e3e' },
     { property: '--label-highlight', value: '#efefef' },
+    { property: '--card-blur', value: '255, 255, 255' },
   ]
 }
 
