@@ -15,7 +15,7 @@ function FilterHeader({ filters, subFilters, setTabState, secondarySubFilters }:
 
   useEffect(() => {
     setTabState({ main: activeTab.filter, sub: activeSubTab.filter, secondarySub: activeSecondarySubTab ? activeSecondarySubTab.filter : undefined });
-  }, [activeTab, activeSubTab, setTabState]);
+  }, [activeTab, activeSubTab, setTabState, activeSecondarySubTab]);
 
   const tabInStyle = {
     width: `calc((100% / ${filters.length}) - 0.5rem)`,
