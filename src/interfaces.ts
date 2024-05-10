@@ -1,6 +1,7 @@
 export interface ParsedProject {
   id: number;
   title: string;
+  date?: string | number | Date;
   introduction: string;
   status: number;
   images?: string[];

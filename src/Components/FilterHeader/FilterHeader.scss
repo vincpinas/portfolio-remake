@@ -65,6 +65,10 @@ $base-width: 9rem;
     transform: translateY(0px);
     opacity: 0;
 
+    &.secondary.active {
+      transform: translateY(265%);
+    }
+
     &.active {
       transform: translateY(160%);
       opacity: 1;

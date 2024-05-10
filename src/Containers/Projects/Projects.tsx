@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import FilterHeader from '../../Components/FilterHeader/FilterHeader';
 import Education from './Tabs/Education/Education';
 import ProjectDisplay from './Tabs/ProjectDisplay/ProjectDisplay';
@@ -28,6 +28,7 @@ function Projects() {
         setTabState={setTabState}
         filters={filters}
         subFilters={subFilters}
+        // secondarySubFilters={secondarySubFilters}
       />
       <div className="tabWrapper">
         {tab()}

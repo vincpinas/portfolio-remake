@@ -29,13 +29,13 @@ function ProjectPopup({ project, close }: PopProps) {
   }
 
   const typeTag = (() => {
-    if(project.categories.includes("personal")) {
+    if (project.categories.includes("personal")) {
       return "Personal"
-    } else if(project.categories.includes("work")) {
+    } else if (project.categories.includes("work")) {
       return "Work"
-    } else if(project.categories.includes("school")) {
+    } else if (project.categories.includes("school")) {
       return "School"
-    } 
+    }
   })()
 
   return (
@@ -53,9 +53,7 @@ function ProjectPopup({ project, close }: PopProps) {
             </ul>
           </div>
           <div className='title'>
-            <a href={project.links.live} target='_blank' rel="noreferrer">
-              <h2>{project.title}</h2>
-            </a>
+            <h2>{project.title}</h2>
             <p>{project.introduction}</p>
             <hr />
 
@@ -76,7 +74,7 @@ function ProjectPopup({ project, close }: PopProps) {
 
             <h4>Useful Links</h4>
             <ul className='tagList'>
-              <li className='tag'><a href={project.links.github} target='_blank' rel="noreferrer">Github <Github></Github></a></li>
+              <li className='tag'><a href={project.links.github} target='_blank' rel="noreferrer" className={project.links.live === "#" ? "disabled" : ""}>Github <Github></Github></a></li>
               <li className='tag'><a href={project.links.live} target='_blank' rel="noreferrer" className={project.links.live === "#" ? "disabled" : ""}>Live Version<LiveVersion></LiveVersion></a></li>
             </ul>
           </div>
@@ -85,7 +83,7 @@ function ProjectPopup({ project, close }: PopProps) {
         <p>{project.description}</p>
 
         <h4>What I learned from {project.title}</h4>
-        <p>{project.learned}</p>
+        <p dangerouslySetInnerHTML={{ __html: project.learned }}></p>
       </div>
       <div className='blur' ref={blur} onClick={closeAnim} />
     </section>

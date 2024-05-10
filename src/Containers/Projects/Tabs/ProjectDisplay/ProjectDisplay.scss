@@ -255,7 +255,12 @@
           @include font--primary(400);
           margin: 0;
           margin-left: 1rem;
-          padding: 0.25rem 0.5rem;
+          padding: 0.25rem;
+          width: 6rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
           background: var(--background);
           box-shadow: 0 3px var(--background-alternate);
           border-radius: $border-radius--primary;

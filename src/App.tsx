@@ -26,7 +26,7 @@ function App() {
       root.style.setProperty(`${prop.property}-rgb`, hexToRgb(prop.value)); 
     });
     Cookies.set('theme', theme);
-  }, [theme]);
+  }, [theme]);  
 
   return (
     <div className={`appWrapper ${theme}`}>
