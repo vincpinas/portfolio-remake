@@ -73,12 +73,14 @@
       #close {
         font-size: 1.35em;
         margin-bottom: 1rem;
+        stroke-width: 3;
+        overflow: visible;
       }
 
       #close path {
         stroke: var(--text-primary);
         transition: $transition-fast;
-        stroke-width: 3;
+        stroke-width: inherit;
       }
 
       #close:hover path {
@@ -151,8 +153,12 @@
       margin-bottom: 1rem;
 
       &>img {
-        width: 21.5rem;
+        max-width: 21.5rem;
         margin-bottom: 0.5rem;
+
+        @media #{$mobile-down} {
+          max-width: 100%;
+        }
       }
 
       ul {
@@ -163,7 +169,11 @@
 
       ul li,
       ul li img {
-        width: 5rem;
+        max-width: 5rem;
+
+        @media #{$mobile-down} {
+          max-width: calc(100%);
+        }
       }
 
     }

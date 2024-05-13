@@ -35,7 +35,7 @@ function MiniPortfolio() {
 
   return (
     <div id='miniPortComponent'>
-      <h5 className='hoverInfo'>You can hover on the elements <br /> here for tooltips!</h5>
+      <h5 className='hoverInfo'>Hover over any of the bottom 6 <br /> elements here for tooltips!</h5>
       <h5 className='hoverInfo avatar'>This avatar changes per day <br /> so check in tomorrow!</h5>
       <Link to='/about' className='imgWrapper' onMouseEnter={setAnimation} onMouseLeave={resetAnimation}>
         <span className="innerBorder" ref={ref} />

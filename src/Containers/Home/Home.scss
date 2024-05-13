@@ -28,10 +28,6 @@
         @include paragraph;
         font-weight: 700;
         padding: 10px 100px;
-
-        @media #{$mobile-down} {
-          display: none;
-        }
       }
     }
 
