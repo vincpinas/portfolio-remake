@@ -2,16 +2,29 @@ import { ParsedProject } from '../../../interfaces';
 
 const projects: ParsedProject[] = [
   {
-    id: 6,
-    title: 'Passion project (Midi)',
+    id: 7,
+    title: 'Student City',
     introduction: 'A school project where we could pick something to design and make',
     status: 1,
-    description: 'In this project I worked with 3 other students who all had similair passions, in this case: music. Together we had 6 weeks the time to pick something physical with an added value (like sustainability), make it and build a fake brand around it. We chose to make a Midi Keyboard, we then spent the first 2 weeks planning and seperating the work between us four. I chose to build the website for the project and help out with the physical prototype where I could.',
+    description: 'This project was for one of my subjects called Information Architecture. That means we had to make a design that adhered to a couple of principles for good hierarchy, filtering and sorting information. I designed and prototyped a total of 26 screens and elements for this project using the information I learned during the classes.',
+    images: [''],
+    learned: `I learned which elements can be used to structure which data and/or visual information to make for a better overall experience for the user.`,
+    links: { github: '#', live: '#' },
+    skills: ['Figma', 'Prototyping', 'Information Architecture', 'Human Computer Interaction'],
+    categories: ['design', 'prototype', 'school', 'subject'],
+    team: 'Individual'
+  },
+  {
+    id: 6,
+    title: 'Passion project (Re:note)',
+    introduction: 'A school project where we could pick something to design and make',
+    status: 1,
+    description: 'In this project I worked with 3 other students who all had similair passions, in this case: music. Together we had 6 weeks the time to pick something physical with an added value (like sustainability), make it and build a fake brand around it. We chose to make a Midi Keyboard with the brandname: Re:note, we then spent the first 2 weeks planning and seperating the work between us four. I chose to build the website for the project and help out with the physical prototype where I could.',
     images: [''],
     learned: `Since I worked on the website I mostly polished my coding skills and design skills. During the project we got the idea of getting a model to show what our keyboard would look like and animating it like one of those Apple showcase websites. <br><br> This is usually done by animating images since thats a lot faster than the way we did it, but since we would only show it on my pc which is fast enough we chose to do it using Three.js for the model and GSAP to animate which I both didn't have a lot of experience with so I learned a lot from. <br><br> On the design side I had a challenge on my hands at first since I needed to cram a lot of info in there while keeping it uncluttered and conveying as much info visibly at once. I solved this by just splitting the page into two parts, one with the model and one with the information that you can scroll to. People seemed to like this, but most didn't know that they could scroll down so I put an indication and tested it again but some still missed it so I learned once again that you can NEVER make it too clear for users what to do.`,
     links: { github: 'https://github.com/vincpinas/CMD-passie-project', live: 'https://midifree.netlify.app/' },
     skills: ['TypeScript', 'SCSS', 'GSAP', 'Three.js'],
-    categories: ['design', 'prototype', 'school'],
+    categories: ['design', 'prototype', 'school', 'project'],
     team: 'Collaboration'
   },
   {
@@ -25,7 +38,7 @@ const projects: ParsedProject[] = [
     links: { github: '', live: '#' },
     skills: ['React', 'PHP'],
     categories: ['development', 'webapp', 'school'],
-    team: 'Solo'
+    team: 'Individual'
   },
   {
     id: 2,
@@ -38,7 +51,7 @@ const projects: ParsedProject[] = [
     links: { github: 'https://github.com/vincpinas/TSChat', live: '#' },
     skills: ['Node', 'React', 'Socket.io', 'TypeScript', 'Express'],
     categories: ['development', 'chatapp', 'personal'],
-    team: 'Solo'
+    team: 'Individual'
   },
   {
     id: 3,
@@ -64,7 +77,7 @@ const projects: ParsedProject[] = [
     links: { github: 'https://github.com/vincpinas/transformers.Community/', live: 'https://vincent.student-sd.site/' },
     skills: ['Laravel', 'Blade', 'SQL', 'JavaScript'],
     categories: ['development', 'working prototype', 'online community', 'school'],
-    team: 'Solo',
+    team: 'Individual',
   },
   {
     id: 5,
